@@ -607,7 +607,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This world has a mysterious backstory... Play to learn it
+  m_text: This world has a mysterious backstory... Pick up coins and explore the
+    world's functions
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f053e07ca2820a744979224afe28eb1b, type: 2}
   m_sharedMaterial: {fileID: 4850658297285375938, guid: f053e07ca2820a744979224afe28eb1b, type: 2}
@@ -673,7 +674,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -58.381638, y: 0, z: -56.45169, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -704,6 +705,10 @@ PrefabInstance:
     - target: {fileID: 1961212175630670026, guid: 94c703986e5e7804582840a6abb3a2e0, type: 3}
       propertyPath: m_Name
       value: start
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891717892995910323, guid: 94c703986e5e7804582840a6abb3a2e0, type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5364395505349214711, guid: 94c703986e5e7804582840a6abb3a2e0, type: 3}
       propertyPath: m_Pivot.x
