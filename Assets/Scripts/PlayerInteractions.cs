@@ -6,6 +6,8 @@ public class PlayerInteractions : MonoBehaviour
     private int coinsCollected = 0;
     public bool hasBall = false;
     
+    private GameObject player;
+    
     [SerializeField] private TMPro.TextMeshProUGUI coinsCollectedText;
     
     private GameObject interactingObject;
@@ -13,7 +15,7 @@ public class PlayerInteractions : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class PlayerInteractions : MonoBehaviour
             Destroy(other.gameObject);
             coinsCollected++;
             coinsCollectedText.text = $"{coinsCollected}x";
+            player.GetComponent<AudioSource>().Play();
         }
         
         
