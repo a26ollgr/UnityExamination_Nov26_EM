@@ -3,8 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractions : MonoBehaviour
 {
-
+    private int coinsCollected = 0;
     public bool hasBall = false;
+    
+    [SerializeField] private TMPro.TextMeshProUGUI coinsCollectedText;
     
     private GameObject interactingObject;
 
@@ -39,7 +41,14 @@ public class PlayerInteractions : MonoBehaviour
             {
                 other.GetComponent<Interactable>().PlayerInRange.Invoke();
             }
+        } else if (other.CompareTag("coin"))
+        {
+            Destroy(other.gameObject);
+            coinsCollected++;
+            coinsCollectedText.text = $"{coinsCollected}x";
         }
+        
+        
 
     }
 
