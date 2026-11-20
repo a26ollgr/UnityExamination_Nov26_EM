@@ -24,6 +24,7 @@ public class PlayerInteractions : MonoBehaviour
         if(other.GetComponent<Interactable>() != null)
         {
             interactingObject = other.gameObject;
+            Debug.Log(interactingObject.name);
 
             Debug.Log("Player entered the trigger zone of an interactable object.");
 
@@ -54,6 +55,11 @@ public class PlayerInteractions : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
+        if (context.performed)
+        {
+            Debug.Log("interacting");
+        }
+        
         if(context.performed && interactingObject != null)
         {
             Debug.Log("Player interacted with an object.");

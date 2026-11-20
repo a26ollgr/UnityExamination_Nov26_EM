@@ -21,6 +21,8 @@ public class DialogueSystem : MonoBehaviour
 
     public void Dialogue()
     {
+        Debug.Log("dialogue");
+        
         if (!dialogueActive)
         {
             dialogueActive = true;
