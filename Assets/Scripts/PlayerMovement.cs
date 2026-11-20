@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundDistance;
+    
+    private Animator animator;
 
     public bool movementActive = true;
 
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator =  GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -29,6 +32,15 @@ public class PlayerMovement : MonoBehaviour
 
         if(movementActive)
             rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+
+        if (rb.linearVelocity.x != 0)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
