@@ -22,6 +22,15 @@ public class DialogueSystem : MonoBehaviour
     public void Dialogue()
     {
         Debug.Log("dialogue");
+
+        if (player.GetComponentInChildren<PlayerInteractions>().hasBall)
+        {
+            lines[2] = "Greg: I see you have a ball. Nice.";
+        }
+        else
+        {
+            lines[2] = "Greg: Unfortunate. No ball.";
+        }
         
         if (!dialogueActive)
         {

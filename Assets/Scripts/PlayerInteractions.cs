@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerInteractions : MonoBehaviour
 {
 
+    public bool hasBall = false;
+    
     private GameObject interactingObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,6 +18,11 @@ public class PlayerInteractions : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeBall()
+    {
+        hasBall = true;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
